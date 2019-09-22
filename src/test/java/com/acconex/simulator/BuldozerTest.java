@@ -9,7 +9,7 @@ import com.acconex.simulator.internal.Bulldozer;
 import com.acconex.simulator.internal.CommandExecutor;
 import com.acconex.simulator.internal.LeftCommand;
 import com.acconex.simulator.internal.RightCommand;
-import com.acconex.simulator.model.Direction;
+import com.acconex.simulator.internal.direction.DirectionLookup;
 
 public class BuldozerTest {
   private static Map <Integer,String > landMap= new HashMap<Integer, String>();
@@ -20,13 +20,13 @@ public class BuldozerTest {
   
   @Test
   public void sendCommandsToBuldozerTest(){
-      Position initialPosition = new Position(0, 0, Direction.E);
+      Position initialPosition = new Position(0, 0, DirectionLookup.E);
     Bulldozer bulldozer = new Bulldozer(land,initialPosition);
     executor.executeOperation(new AdvanceCommand(bulldozer,2));
     executor.executeOperation(new RightCommand(bulldozer));
     executor.executeOperation(new LeftCommand(bulldozer));
     
-    Position expectedPostion = new Position(2, 1, Direction.E); 
+    Position expectedPostion = new Position(2, 1, DirectionLookup.E); 
 
     assertEquals("Bulldozer should face east",expectedPostion.getDirection(), bulldozer.getCurrentPosition().getDirection());
     assertEquals("Bulldozer should stay at X coordinate",expectedPostion.getX(), bulldozer.getCurrentPosition().getX());

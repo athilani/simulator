@@ -11,5 +11,6 @@ public class AdvanceCommand implements Command{
 
   @Override
   public void execute() {
+    bulldozer.advance(units);
   }
 }

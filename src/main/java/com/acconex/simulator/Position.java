@@ -1,13 +1,13 @@
 package com.acconex.simulator;
 
-import com.acconex.simulator.model.Direction;
+import com.acconex.simulator.internal.direction.DirectionLookup;
 
 public class Position {
   private  int x ;
   private int y ;
-  private Direction direction;
+  private DirectionLookup direction;
   
-  public Position(int x, int y, Direction moveDirection) {
+  public Position(int x, int y, DirectionLookup moveDirection) {
     this.x = x;
     this.y = y;
     this.direction = moveDirection;
@@ -41,11 +41,11 @@ public class Position {
     return true;
   }
 
-  public Direction getDirection() {
+  public DirectionLookup getDirection() {
     return direction;
   }
 
-  public void setDirection(Direction moveDirection) {
+  public void setDirection(DirectionLookup moveDirection) {
     this.direction = moveDirection;
   }
 

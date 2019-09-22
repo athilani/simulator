@@ -3,8 +3,6 @@ package com.acconex.simulator.internal;
 import com.acconex.simulator.Land;
 import com.acconex.simulator.Position;
 
-
-
 public class Bulldozer {
   private Position currentPosition;
   private final Land land;
@@ -30,6 +28,4 @@ public class Bulldozer {
   void turnRight(){
 
   }
-
-
 }
