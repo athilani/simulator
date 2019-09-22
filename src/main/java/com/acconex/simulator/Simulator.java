@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+import com.acconex.simulator.internal.Bulldozer;
 import com.acconex.simulator.model.Direction;
 
 public class Simulator 
@@ -22,7 +23,7 @@ public class Simulator
       //top left corner coordinate taken as (0,0)
       //and the bulldozer is facing  east
       Position initialPosition = new Position(INITIAL_X, INITIAL_Y, Direction.E);
-      Bulldozer bulldozer = new Bulldozer(initialPosition,land);
+      Bulldozer bulldozer = new Bulldozer(land,initialPosition);
       InputUtils.readCommands(new InputStreamReader(System.in),Simulator::sendCommandToBulldozer);
     }
     
