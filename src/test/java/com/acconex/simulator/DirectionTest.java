@@ -2,6 +2,7 @@ package com.acconex.simulator;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import com.acconex.simulator.Position;
 import com.acconex.simulator.internal.direction.Direction;
 import com.acconex.simulator.internal.direction.DirectionLookup;
 import com.acconex.simulator.internal.direction.EastDirection;

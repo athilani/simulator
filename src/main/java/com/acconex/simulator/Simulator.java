@@ -55,7 +55,7 @@ public class Simulator
 
   private  void setCommandToController(String userCommand){
 
-   Command bulldozerCommand = CommandInterpreter.prepareCommand(userCommand, bulldozer,this::printSummary);
+   Command bulldozerCommand = CommandConverter.prepareCommand(userCommand, bulldozer);
    executor.executeOperation(bulldozerCommand);
 
   }

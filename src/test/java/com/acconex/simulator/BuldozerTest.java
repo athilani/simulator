@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import org.junit.Before;
 import org.junit.Test;
+import com.acconex.simulator.Position;
 import com.acconex.simulator.exception.OutofBoundException;
 import com.acconex.simulator.internal.AdvanceCommand;
 import com.acconex.simulator.internal.Bulldozer;
