@@ -10,5 +10,9 @@ public class CommandExecutor {
     commands.add(command);
     command.execute();
 }
+
+  public List<Command> getCommands() {
+    return commands;
+  }
    
 }

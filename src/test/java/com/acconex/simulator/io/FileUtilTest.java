@@ -13,6 +13,6 @@ public class FileUtilTest {
   public void newFileReaderShouldBeReturned() throws FileNotFoundException, URISyntaxException{
     File input =new File( this.getClass().getResource("/testInput.txt").toURI());
     assertNotNull(input);
-    assertNotNull(FileUtil.newFileReader(input));
+    assertNotNull(FileUtils.newFileReader(input));
   }
 }

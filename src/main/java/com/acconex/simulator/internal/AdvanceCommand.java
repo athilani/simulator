@@ -13,4 +13,9 @@ public class AdvanceCommand implements Command{
   public void execute() {
     bulldozer.advance(units);
   }
+  
+  @Override
+  public String toString(){
+    return CommandType.A.getCommand() + " " + units;
+  }
 }

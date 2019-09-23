@@ -4,10 +4,13 @@ public enum CommandType {
   A("Advance"),
   L("Left"),
   R("Right"),
-  Q("Quite");
+  Q("Quit");
   
-  CommandType(String comnand){
-    
+  private String command;
+  CommandType(String command){
+    this.command = command;
   }
-
+ public  String getCommand(){
+   return this.command;
+ }
 }

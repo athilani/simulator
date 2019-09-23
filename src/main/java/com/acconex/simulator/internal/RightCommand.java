@@ -12,4 +12,9 @@ public class RightCommand implements Command{
   public void execute() {
     bulldozer.turnRight();
   }
+  
+  @Override
+  public String toString(){
+    return CommandType.R.getCommand() ;
+  }
 }

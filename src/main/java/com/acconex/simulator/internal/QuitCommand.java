@@ -1,20 +1,21 @@
 package com.acconex.simulator.internal;
 
-public class LeftCommand implements Command{
+
+public class QuitCommand implements Command{
 
  private Bulldozer bulldozer;
-  
-  public LeftCommand(Bulldozer bulldozer){
+ 
+  public QuitCommand(Bulldozer bulldozer){
     this.bulldozer = bulldozer;
   }
 
   @Override
   public void execute() {
-    bulldozer.turnLeft();
+    bulldozer.quit();
   }
   
   @Override
   public String toString(){
-    return CommandType.L.getCommand() ;
+    return CommandType.Q.getCommand() ;
   }
 }

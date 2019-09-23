@@ -6,11 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 
 public class InputUtilsTest {
- private static Map <Integer,String > landMap= new HashMap<Integer, String>();
+ private static Map <Integer,List<Character>> landMap= new HashMap<>();
     
   @Test
   public void loadMapFileTest() throws FileNotFoundException{

@@ -2,6 +2,7 @@ package com.acconex.simulator;
 
 import static org.junit.Assert.assertEquals;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 import com.acconex.simulator.internal.AdvanceCommand;
@@ -10,9 +11,10 @@ import com.acconex.simulator.internal.CommandExecutor;
 import com.acconex.simulator.internal.LeftCommand;
 import com.acconex.simulator.internal.RightCommand;
 import com.acconex.simulator.internal.direction.DirectionLookup;
+import com.acconex.simulator.land.Land;
 
 public class BuldozerTest {
-  private static Map <Integer,String > landMap= new HashMap<Integer, String>();
+  private static Map <Integer,List<Character>>landMap= new HashMap<Integer,List<Character>>();
 
   private static final Land land = new Land(landMap);
   private static CommandExecutor executor = new CommandExecutor();
@@ -21,7 +23,7 @@ public class BuldozerTest {
   @Test
   public void sendCommandsToBuldozerTest(){
       Position initialPosition = new Position(-1, 0, DirectionLookup.E);
-    Bulldozer bulldozer = new Bulldozer(land,initialPosition);
+    Bulldozer bulldozer = new Bulldozer(land,initialPosition,null);
     executor.executeOperation(new AdvanceCommand(bulldozer,2));
     executor.executeOperation(new RightCommand(bulldozer));
     executor.executeOperation(new AdvanceCommand(bulldozer,2));
