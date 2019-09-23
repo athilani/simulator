@@ -1,6 +1,5 @@
 package com.acconex.simulator;
 
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Consumer;
 import com.acconex.simulator.exception.InvalidArgumentException;
@@ -11,7 +10,6 @@ import com.acconex.simulator.internal.Command;
 import com.acconex.simulator.internal.LeftCommand;
 import com.acconex.simulator.internal.QuitCommand;
 import com.acconex.simulator.internal.RightCommand;
-import com.acconex.simulator.internal.direction.DirectionLookup;
 
 
 public final class CommandInterpreter {
@@ -50,8 +48,6 @@ public final class CommandInterpreter {
    return c;
 
   }
-  
- 
   public static  Optional<String> getArgs(String  userCommand){
     if(userCommand.length() >= 2){
       String [] args = userCommand.split(ARG_SEPARATOR);
@@ -62,14 +58,4 @@ public final class CommandInterpreter {
     }
   }
 
-  public static Position getPlaceArgs(String[] args) {
-    Position position = null;
-    if(args.length == 2){     
-      position = new Position(Integer.parseInt(args[0]), Integer.parseInt(args[1]),DirectionLookup.E);
-    }
-    else{
-      throw new InvalidArgumentException("Invalid arguments received "+ Arrays.asList(args));
-    }
-   return position;
-  }
 }

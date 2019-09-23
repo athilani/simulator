@@ -14,13 +14,16 @@ import com.acconex.simulator.land.Land;
 
 public class Simulator 
 {
-  private static final Map <Integer,String > landMap = new HashMap<Integer, String>();
+
   private static String FILE_NAME ="input.txt";
   private static final int INITIAL_X = -1;
   private static final int INITIAL_Y = 0;
   private Land land;
   private Bulldozer bulldozer;
   private CommandExecutor executor ;
+  private static Map <Integer,List<Character>> landMap = new HashMap <Integer,List<Character>>();
+
+  
   public static void main( String[] args )
   {
     Simulator simulator = new Simulator();
@@ -37,7 +40,6 @@ public class Simulator
     } catch (URISyntaxException e) {
       throw new IllegalStateException(e);
     }
-      Map <Integer,List<Character>> landMap = new HashMap <Integer,List<Character>>();
       
       InputUtils.loadMap(input, landMap);
       land = new Land(landMap);

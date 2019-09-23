@@ -39,7 +39,8 @@ public class InputUtils {
              System.out.println();  
              column.forEach(ch ->{ System.out.print(ch+ " ");});
              }); 
-   
+   System.out.println();
+
   } catch (FileNotFoundException e) {
     
    throw new UncheckedIOException(e);
