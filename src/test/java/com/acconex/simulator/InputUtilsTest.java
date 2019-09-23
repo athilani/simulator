@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
+import com.acconex.simulator.InputUtils;
 
 public class InputUtilsTest {
  private static Map <Integer,List<Character>> landMap= new HashMap<>();
