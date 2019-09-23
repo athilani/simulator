@@ -9,21 +9,20 @@ public class SouthDirection implements Direction{
   }
   
   @Override
-  public Direction turnLeft() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnLeft() {
+    return DirectionLookup.E;
   }
 
   @Override
-  public Direction turnRight() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnRight() {
+    return DirectionLookup.W;
   }
 
+//y coordinate should increase by given units
   @Override
   public Position advance(Position currentPosition, int units) {
-    // TODO Auto-generated method stub
-    return null;
+    int newY = currentPosition.getY() + units;
+    return new Position(currentPosition.getX(), newY, currentPosition.getDirection());
   }
 
 }

@@ -9,21 +9,19 @@ public class NorthDirection implements Direction{
   }
   
   @Override
-  public Direction turnLeft() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnLeft() {
+    return DirectionLookup.W;
   }
 
   @Override
-  public Direction turnRight() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnRight() {
+   return DirectionLookup.E;
   }
 
   @Override
+//y coordinate should decrease by given units
   public Position advance(Position currentPosition, int units) {
-    // TODO Auto-generated method stub
-    return null;
+    int newY = currentPosition.getY() - units;
+    return new Position(currentPosition.getX(), newY, currentPosition.getDirection());
   }
-
 }

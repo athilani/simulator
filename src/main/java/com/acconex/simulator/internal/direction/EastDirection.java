@@ -9,21 +9,20 @@ public class EastDirection implements Direction{
   }
   
   @Override
-  public Direction turnLeft() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnLeft() {
+   return DirectionLookup.N;
   }
 
   @Override
-  public Direction turnRight() {
-    // TODO Auto-generated method stub
-    return null;
+  public DirectionLookup turnRight() {
+   return DirectionLookup.S;
   }
-
+  
+//x coordinate should increase by given units
   @Override
   public Position advance(Position currentPosition, int units) {
-    // TODO Auto-generated method stub
-    return null;
+    int newX = currentPosition.getX() + units;
+    return new Position(newX, currentPosition.getY(), currentPosition.getDirection());
   }
 
 }

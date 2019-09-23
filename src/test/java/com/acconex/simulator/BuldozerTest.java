@@ -20,13 +20,14 @@ public class BuldozerTest {
   
   @Test
   public void sendCommandsToBuldozerTest(){
-      Position initialPosition = new Position(0, 0, DirectionLookup.E);
+      Position initialPosition = new Position(-1, 0, DirectionLookup.E);
     Bulldozer bulldozer = new Bulldozer(land,initialPosition);
     executor.executeOperation(new AdvanceCommand(bulldozer,2));
     executor.executeOperation(new RightCommand(bulldozer));
+    executor.executeOperation(new AdvanceCommand(bulldozer,2));
     executor.executeOperation(new LeftCommand(bulldozer));
-    
-    Position expectedPostion = new Position(2, 1, DirectionLookup.E); 
+
+    Position expectedPostion = new Position(1, 2, DirectionLookup.E); 
 
     assertEquals("Bulldozer should face east",expectedPostion.getDirection(), bulldozer.getCurrentPosition().getDirection());
     assertEquals("Bulldozer should stay at X coordinate",expectedPostion.getX(), bulldozer.getCurrentPosition().getX());
